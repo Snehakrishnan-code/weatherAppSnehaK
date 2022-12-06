@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Alkalami&family=Bad+Script&family=Cabin:wght@600&family=Covered+By+Your+Grace&family=Dancing+Script:wght@700&family=Gloria+Hallelujah&family=Inter+Tight:ital@0;1&family=Pacifico&family=Rajdhani:wght@600&display=swap');
+
+body {
+    background-image: url(./home1.jpg);
+    background-repeat: no-repeat;
+    background-attachment: local;
+    background-position: center center;
+    background-size: inherit;
+    }
+
+#front1 {
+    background-color: rgb(88, 69, 106);
+}
+
+
+#front2 {
+    font-family: 'Acme', sans-serif;
+    color: white;
+}
+
+
