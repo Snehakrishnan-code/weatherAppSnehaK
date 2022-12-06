@@ -17,57 +17,24 @@
 </head>
 
 <body>
-  <div class="container w-50">
-    <div id="front1" class="container text-center p-3 mt-5 border">
-      <h1 id="front2">Weather Update</h1>
-      <input id="loc" type="text" placeholder="Get weather details by location" class="form-control mt-3 text-center">
+
+  <div class="container card col-lg-6 col-md-12 col-sm-12 col-xs-12  mt-5">
+    <div id="front1" class="container text-center border">
+      <h1 id="front2">Weather Details</h1>
+      <input id="loc" type="text" placeholder="Enter location" class="form-control mt-3 text-center">
       <br>
-      <button onclick="search()" class="btn btn-outline-dark mt-2" type="button">View</button>
+      <button onclick="search()" class="btn btn-outline-dark mt-2" type="button">View</button> <br> <br>
     </div>
   </div>
+<br>
 
-  <div class="container w-50 text-center p-3" id="result">
+
+  <div class="d-flex justify-content-center mt-5 text-center" id="result">
 
   </div>
+
 
 </body>
-<script>
-  function search() {
-    city = loc.value
-
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=5b4bee0ba241d092159faf007e166080`)
-      .then(d => d.json()).then(resp => displaydata(resp))
-  }
-
-  function displaydata(city) {
-
-    cname = city.name
-    temp = city.main.temp
-    weather = city.weather[0].main
-    humidity = city.main.humidity
-    speed = city.wind.speed
-    sunrise = city.sys.sunrise
-    sunset = city.sys.sunset
-
-    htmldata = `
-    <div class="container w-75 card border border-white" style="width: 18rem; background-color: rgb(88, 69, 106);">
-    <div class="card-body">
-      <h1 class="card-title text-white">${cname}</h1>
-      <h1 class="card-text text-white">${Math.floor(temp - 273.15)}°C</h1>
-    </div>
-    <li class="list-group-item text-white">Weather :${weather}</li> <br>
-      <li class="list-group-item text-white">Humidity :${humidity}%</li> <br>
-        <li class="list-group-item text-white">Wind Speed :${speed}m/s</li> <br>
-          <li class="list-group-item text-white">Sunrise :${sunrise}</li> <br>
-            <li class="list-group-item text-white">Sunset :${sunset}</li> <br>
-            </ul>
-          </div>
-
-         `
-    result.innerHTML = htmldata
-  }
-
-
-</script>
+<script src="./weather.js"></script>
 
 </html>
